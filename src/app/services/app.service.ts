@@ -1,14 +1,6 @@
 
 import { Injectable } from '@angular/core';
-import { HttpClientModule, HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import {
-  map,
-  debounceTime,
-  distinctUntilChanged,
-  switchMap,
-  tap
-} from 'rxjs/operators';
+import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Item } from '../models/Item';
 
 
