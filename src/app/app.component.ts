@@ -41,7 +41,10 @@ export class AppComponent {
   add(data) {
     console.log(data);
     this.searchData = data;
-    this._searchService.add(data);
+    this._searchService.add(data).subscribe((res) => {
+      console.log(res);
+    });
+    this.list = [];
   }
 
 }

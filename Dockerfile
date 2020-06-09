@@ -1,7 +1,7 @@
 FROM node as builder
 WORKDIR '/app'
 COPY . .
-RUN npm install -g @angular/cli
+RUN npm install -g @angular/cli@8.3.26
 RUN npm install
 RUN ng build --prod
 
