@@ -13,7 +13,7 @@ export class SearchService {
   constructor(private http: HttpClient) { }
 
   search(keyword: string) {
-    console.log('service inside ' + keyword);
+    // console.log('service inside ' + keyword);
     const apiURL = this.apiRoot + 'query';
     return this.http.get(apiURL, {
       params: new HttpParams().set('data', keyword)

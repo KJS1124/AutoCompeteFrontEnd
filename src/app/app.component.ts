@@ -20,9 +20,9 @@ export class AppComponent {
   searchData = '';
   constructor(private _searchService: SearchService) { }
   onSearchChange(data) {
-    console.log(data.value);
+    // console.log(data.value);
     this._searchService.search(data.value).subscribe((res: String[]) => {
-      console.log(res);
+      // console.log(res);
       const result: Item[] = [];
       for (let i = 0; i < res.length; i++) {
         result.push(new Item(res[i]));
@@ -39,10 +39,10 @@ export class AppComponent {
 
 
   add(data) {
-    console.log(data);
+    // console.log(data);
     this.searchData = data;
     this._searchService.add(data).subscribe((res) => {
-      console.log(res);
+      // console.log(res);
     });
     this.list = [];
   }

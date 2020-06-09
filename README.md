@@ -1,28 +1,17 @@
 # AutoCompleteFrontEnd
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.3.
+## Environment configuration.
 
-## Development server
+Step - 1. Install docker in your system.
+step - 2. login into https://www.docker.com/, if not registered, register and then login.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Deployment configuration.
+step - 1. extract the binaries given.
+step - 2. open the folder (AutoCompleteFrontEnd) and look for dockerfile.
+step - 3. open command prompt in that folder and execute the command "docker build . "
+step - 4. Once image build collect the image id from console or run command docker images and take latest                builded image id
+step - 5. execute the command docker run -p 127.0.0.1:4200:80 IMAGE_ID
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-# AutoCompeteFrontEnd
+## Note
+Please make sure both of server are running on same machine as we are not exposing services to outside.
+This UI is not reponsive.
