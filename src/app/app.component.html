@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="banner">
+    KJS Search
+  </div>
+  <div class="input-icons">
+    <div class="form-group">
+      <input type="text" class="formc-control" placeholder="Enter Text" [(nhModel)]="searchData"
+        (input)="onSearchChange($event.target)" (keyup.enter)='add($event.target.value)'>
+
+    </div>
+
+    <mat-list role="list" *ngIf="list.length!=0">
+      <mat-list-item role="listitem" *ngFor="let item of list; let i = index" (click)="add(item.data)">
+        {{item.data}}
+      </mat-list-item>
+    </mat-list>
+  </div>
+</div>
