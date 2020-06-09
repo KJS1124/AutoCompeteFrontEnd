@@ -16,29 +16,13 @@ export class SearchService {
     console.log('service inside ' + keyword);
     const apiURL = this.apiRoot + 'query';
     return this.http.get(apiURL, {
-      headers: new HttpHeaders({
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Credentials': 'true',
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET',
-        'Access-Control-Allow-Headers': 'content-type, Accept'
-      }), params: new HttpParams().set('data', keyword)
+      params: new HttpParams().set('data', keyword)
     });
   }
 
   add(keyword: string) {
     const apiURL = this.apiRoot + 'add';
-    return this.http.post(apiURL, { 'data': keyword }, {
-      headers: new HttpHeaders({
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Credentials': 'true',
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET',
-        'Access-Control-Allow-Headers': 'content-type, Accept'
-      }), params: new HttpParams().set('data', keyword)
-    });
+    return this.http.post(apiURL, { 'data': keyword });
   }
 
 }
