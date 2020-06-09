@@ -1,17 +1,13 @@
-import { NgModule, Component, Injectable } from "@angular/core";
-import { BrowserModule } from "@angular/platform-browser";
-import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
-import { HttpClientModule, HttpClient } from "@angular/common/http";
-import { ReactiveFormsModule, FormControl, FormsModule } from "@angular/forms";
+import { NgModule, Component, Injectable } from '@angular/core';
+import { ReactiveFormsModule, FormControl, FormsModule } from '@angular/forms';
 import {
   map,
   debounceTime,
   distinctUntilChanged,
   switchMap,
   tap
-} from "rxjs/operators";
-import { Observable } from "rxjs";
-import { SearchService } from "./services/app.service";
+} from 'rxjs/operators';
+import { SearchService } from './services/app.service';
 import { Item } from './models/Item';
 
 @Component({
@@ -27,15 +23,17 @@ export class AppComponent {
     console.log(data.value);
     this._searchService.search(data.value).subscribe((res: String[]) => {
       console.log(res);
-      let result: Item[] = [];
-      for (let i = 0; i < res.length; i++)
+      const result: Item[] = [];
+      for (let i = 0; i < res.length; i++) {
         result.push(new Item(res[i]));
+      }
       this.list = result;
     });
 
   }
 
 
+  // tslint:disable-next-line:use-life-cycle-interface
   ngOnInit() {
   }
 

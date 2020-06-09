@@ -1,14 +1,14 @@
 
-import { Injectable } from "@angular/core";
-import { HttpClientModule, HttpClient, HttpParams, HttpHeaders } from "@angular/common/http";
-import { Observable } from "rxjs";
+import { Injectable } from '@angular/core';
+import { HttpClientModule, HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
 import {
   map,
   debounceTime,
   distinctUntilChanged,
   switchMap,
   tap
-} from "rxjs/operators";
+} from 'rxjs/operators';
 import { Item } from '../models/Item';
 
 
@@ -17,34 +17,34 @@ import { Item } from '../models/Item';
 export class SearchService {
   results: Item[];
   // add the url
-  apiRoot: string = "http://localhost:9999/";
+  apiRoot = 'http://localhost:9999/';
   constructor(private http: HttpClient) { }
 
   search(keyword: string) {
     console.log('service inside ' + keyword);
-    let apiURL = this.apiRoot + "query"
+    const apiURL = this.apiRoot + 'query';
     return this.http.get(apiURL, {
       headers: new HttpHeaders({
         'Accept': 'application/json',
         'Content-Type': 'application/json',
-        'Access-Control-Allow-Credentials': "true",
+        'Access-Control-Allow-Credentials': 'true',
         'Access-Control-Allow-Origin': '*',
         'Access-Control-Allow-Methods': 'GET',
-        'Access-Control-Allow-Headers': 'content-type, Acept'
+        'Access-Control-Allow-Headers': 'content-type, Accept'
       }), params: new HttpParams().set('data', keyword)
     });
   }
 
   add(keyword: string) {
-    let apiURL = this.apiRoot + "add"
+    const apiURL = this.apiRoot + 'add';
     return this.http.post(apiURL, { 'data': keyword }, {
       headers: new HttpHeaders({
         'Accept': 'application/json',
         'Content-Type': 'application/json',
-        'Access-Control-Allow-Credentials': "true",
+        'Access-Control-Allow-Credentials': 'true',
         'Access-Control-Allow-Origin': '*',
         'Access-Control-Allow-Methods': 'GET',
-        'Access-Control-Allow-Headers': 'content-type, Acept'
+        'Access-Control-Allow-Headers': 'content-type, Accept'
       }), params: new HttpParams().set('data', keyword)
     });
   }

@@ -4,7 +4,7 @@
   </div>
   <div class="input-icons">
     <div class="form-group">
-      <input type="text" class="formc-control" placeholder="Enter Text" [(nhModel)]="searchData"
+      <input type="text" class="formc-control" placeholder="Enter Text" [(ngModel)]="searchData"
         (input)="onSearchChange($event.target)" (keyup.enter)='add($event.target.value)'>
 
     </div>
